@@ -4,7 +4,7 @@
 <body><main>
 <nav><a href="index.html">TaroBird</a><a href="support.html">Support</a></nav>
 <h1>TaroBird Privacy Policy</h1>
-<p class="muted">Effective date: November 11, 2026</p>
+<p class="muted">Effective date: November 14, 2026</p>
 <p class="lang"><a href="#zh">中文版</a></p>
 
 <p>TaroBird is a set of apps (iOS, Android, macOS, Windows and a command-line host) for using AI agents that run on computers you control. This policy explains what happens to your information when you use the TaroBird apps.</p>
@@ -12,7 +12,7 @@
 <h2>Summary</h2>
 <ul>
 <li>TaroBird has no user accounts, no advertising, no analytics and no tracking.</li>
-<li>The developer of TaroBird does not operate a server that receives your conversations, files or device information. The apps talk only to the TaroBird host that you install and pair with.</li>
+<li>The developer does not operate a central service for collecting your conversations or files. Core chat connects to the host you install and pair with. Optional browsers, tools, AI services, update services and notifications make the additional connections described below.</li>
 <li>Your conversations and files are stored on your own host and on the devices you pair with it.</li>
 </ul>
 
@@ -20,10 +20,22 @@
 <p>When you pair a device, it creates a device key that stays on the device (in the iOS Keychain where available). Your host keeps the list of paired devices, your Bots, conversations, messages and attachments in its own database on your computer or server. You can remove a device from the host at any time and delete conversations in the app.</p>
 
 <h2>Network connections</h2>
-<p>The apps connect only to the host addresses in the connection details you scan or paste: for example a computer on your local network, a computer on your Tailscale network, or a relay server that you run. Connections use encryption pinned to your host's identity.</p>
+<p>For host communication, the apps connect to the addresses in the connection details you scan or paste: for example a computer on your local network, a computer on your Tailscale network, or a relay server that you run. These connections use encryption pinned to your host's identity. Optional tools connect to services selected by the host operator. The embedded browser connects to websites you open, and update checks or downloads connect to the configured distribution service.</p>
 
 <h2>AI services you configure</h2>
 <p>Your host runs AI agents (for example command-line agents and models from providers such as OpenAI, Anthropic or DeepSeek) using accounts and API keys that you set up on the host. When you send a message to a Bot, your host may send that message and related files to the AI provider you chose. That processing is governed by the provider's own terms and privacy policy. The TaroBird developer does not receive this data.</p>
+
+<h2 id="google">Optional Google connections</h2>
+<p>Google access is configured separately by your host owner and requires your authorization. Depending on the installed tool and granted permissions, accessed data may include your account email and basic profile; email headers, senders, recipients, message bodies, attachments, drafts and labels; calendar names, event titles, descriptions, times, locations and attendees; and Google document content selected for creation or update. These permissions are not required for ordinary TaroBird chat.</p>
+<p>The purpose is to perform the mail, scheduling or document task you request, such as finding a message, drafting a reply, changing a requested event or exporting a response. Data returned by a tool may become part of the agent context, conversation history or downloaded files on your host. A paired device can receive conversation results. If a cloud AI model is selected, the relevant content may be transmitted to that provider for processing; this is not a local-only data path.</p>
+<p>Google passwords are entered into Google's sign-in page, not a TaroBird account form. Connected tools keep their own authorization credentials on the host. The built-in Google Docs integration stores its refresh token in the supported operating-system credential store. Other tools have their own credential-storage controls, which the host owner must configure securely. Credentials must not be included in chat messages or public support requests.</p>
+<p>TaroBird does not operate an advertising, data-resale or general-purpose-model-training service. Google data must be used only for the requested feature and must not be sold, used for advertising, or used to train general-purpose AI models. The use and transfer of information received from Google APIs must adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including its Limited Use requirements, and the <a href="https://developers.google.com/workspace/workspace-api-user-data-developer-policy">Google Workspace user data policy</a>. Host operators must select and configure any downstream AI provider accordingly; availability as a model option does not establish eligibility to process Google data.</p>
+<h3>Retention, disconnection and deletion</h3>
+<p>Stored conversations, tool outputs, attachments and backups remain under the control of the host operator and paired-device users. There is no developer-operated retention period or central deletion service for these self-hosted copies. Disconnecting a tool stops its future authorized access but does not by itself erase previously stored copies or data already processed by a third-party provider. Remove those copies and backups separately using the host, device and provider controls. Removing a conversation from view is not a promise that every backup or tool-generated file has been erased.</p>
+<p>Revoke the application's access in <a href="https://myaccount.google.com/connections">Google Account third-party connections</a> and disconnect the corresponding tool on your host. Instructions for Google Docs and gws are on the <a href="google.html">Google connections page</a>. Revocation does not delete your original Google emails, calendar events or documents.</p>
+<h2>Embedded browser and website accounts</h2>
+<p>Websites you open receive normal browser requests and handle your information under their own policies. Cookies, website storage, cache and any enabled browsing history are kept in the browser's local profile. TaroBird's personal browser and conversation browser profiles are separate. Browser tools provide controls to clear browsing history or website data.</p>
+<p>When you authorize a Bot to operate a conversation browser, page text, screenshots or files it reads may enter that Bot's context and be processed by its configured model. Google website sign-in and Google API authorization are separate. Use a supported external browser for Google authorization; its cookies are not imported into TaroBird. Signing out of a website does not revoke a separate API connection.</p>
 
 <h2>Device permissions</h2>
 <p>The iOS app asks for permissions only when you use a feature that needs them:</p>
@@ -49,20 +61,31 @@
 <p>Questions about this policy: open an issue at <a href="https://github.com/cloveric/tarobird/issues">github.com/cloveric/tarobird/issues</a>.</p>
 
 <h2 id="zh">TaroBird 隐私政策（中文版）</h2>
-<p class="muted">生效日期：2026 年 11 月 11 日</p>
+<p class="muted">生效日期：2026 年 11 月 14 日</p>
 <p>TaroBird 是一组应用（iOS、Android、macOS、Windows 以及命令行主机），用来使用运行在你自己电脑上的 AI 智能体。本政策说明你使用 TaroBird 时信息如何处理。</p>
 <h3>概要</h3>
 <ul>
 <li>TaroBird 没有用户账号、没有广告、没有统计分析，也不做跟踪。</li>
-<li>TaroBird 开发者不运营任何接收你对话、文件或设备信息的服务器。应用只和你自己安装并配对的 TaroBird 主机通信。</li>
+<li>开发者不运营集中收集你对话或文件的服务。核心聊天连接你安装并配对的主机；可选浏览器、工具、AI、更新和通知功能还会建立下文说明的连接。</li>
 <li>你的对话和文件保存在你自己的主机和已配对的设备上。</li>
 </ul>
 <h3>保存在你设备和主机上的信息</h3>
 <p>配对时，设备会生成一把只保存在本机的设备密钥（iOS 上存入钥匙串）。你的主机在自己的数据库里保存已配对设备列表、Bot、对话、消息和附件。你可以随时在主机上移除设备，也可以在应用里删除对话。</p>
 <h3>网络连接</h3>
-<p>应用只连接你扫描或粘贴的连接信息里的主机地址，例如局域网里的电脑、你 Tailscale 网络里的电脑，或你自己运行的中转服务器。连接使用与主机身份绑定的加密。</p>
+<p>主机通信连接你扫描或粘贴的主机地址，例如局域网电脑、Tailscale 网络里的电脑或你运行的中转服务器，并使用与主机身份绑定的加密。可选工具连接主机运营者选择的服务；内置浏览器连接你打开的网站；更新检查和下载连接所配置的分发服务。</p>
 <h3>你配置的 AI 服务</h3>
 <p>你的主机使用你在主机上配置的账号和 API 密钥运行 AI 智能体（例如 OpenAI、Anthropic、DeepSeek 等服务商的命令行智能体和模型）。你给 Bot 发消息时，主机可能会把消息和相关文件发给你选择的 AI 服务商处理，这部分适用服务商自己的条款和隐私政策。TaroBird 开发者不会收到这些数据。</p>
+<h3 id="google-zh">可选 Google 连接</h3>
+<p>Google 访问由主机所有者单独配置，并须获得你的授权。根据工具和权限，可能访问账号邮箱和基本资料；邮件标题、发件人、收件人、正文、附件、草稿及标签；日历名称、事件标题、说明、时间、地点和参与者；以及你选择创建或更新的 Google 文档内容。普通聊天不要求这些权限。</p>
+<p>这些数据用于你请求的邮件、日程或文档任务，例如查找邮件、起草回复、修改指定日程或导出回答。工具返回的内容可能进入智能体上下文、主机对话历史或下载文件，配对设备也可能收到对话结果。使用云端模型时，相关内容可能传给该模型服务商处理，并非全部只在本地处理。</p>
+<p>Google 密码在 Google 登录页输入，不通过 TaroBird 账号表单收集。工具在主机上管理各自的授权凭据；内置 Google Docs 使用受支持操作系统的凭据存储保存刷新令牌，其他工具有各自的存储机制，主机所有者应安全配置。请勿把凭据放入聊天或公开求助内容。</p>
+<p>TaroBird 不运营广告、数据转售或通用模型训练服务。Google 数据只能用于请求的功能，不得出售、用于广告或通用 AI 模型训练。Google API 数据的使用和传输须遵守 <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>（包括 Limited Use 要求）及 <a href="https://developers.google.com/workspace/workspace-api-user-data-developer-policy">Google Workspace 数据政策</a>。主机运营者须据此选择和配置下游模型服务；模型可被选用不代表它已符合 Google 数据处理要求。</p>
+<h3>保留、断开与删除</h3>
+<p>对话、工具结果、附件和备份由主机运营者及配对设备的使用者管理。开发者不提供针对这些自托管副本的统一保留期限或集中删除服务。断开工具不会自动清除已有副本或第三方服务已处理的内容，须通过主机、设备和服务商的相应功能分别清理。把对话从界面移除，不代表所有备份和工具生成的文件都已擦除。</p>
+<p>可在 <a href="https://myaccount.google.com/connections">Google 账号的第三方连接</a>中撤销对应应用权限，并在主机断开工具；具体方法见 <a href="google.html">Google 连接说明</a>。撤销授权不会删除 Google 中原有的邮件、日程或文档。</p>
+<h3>内置浏览器与网站账号</h3>
+<p>打开的网站会接收正常网页请求，并按各自政策处理信息。Cookie、网站存储、缓存及已启用的历史记录保存在本地浏览器配置中。个人浏览器与对话浏览器的配置互相独立，可通过浏览器工具清理历史或网站数据。</p>
+<p>授权 Bot 操作对话浏览器后，它读取的网页文字、截图或文件可能进入上下文并发送给所配置的模型。Google 网页登录与 API 授权互相独立；Google 授权请使用受支持的外部浏览器，其 Cookie 不会导入 TaroBird。退出网页登录不会撤销独立的 API 连接。</p>
 <h3>设备权限</h3>
 <p>iOS 应用只在你使用相应功能时申请权限：相机（扫描连接二维码、拍照作为附件）、照片（选择图片作为附件、按你的要求保存连接二维码）、麦克风（录制发给 Bot 的语音消息）、本地网络（连接局域网里的主机）、面容 ID（开启应用锁后解锁）。你添加的照片、录音和文件只发送到你的主机。</p>
 <h3>通知</h3>
