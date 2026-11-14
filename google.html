@@ -15,6 +15,7 @@
 <h2>Before connecting</h2>
 <p>Read the <a href="privacy.html#google">Google data section of our privacy policy</a>. Review the account and permissions shown by Google. Mail and calendar content returned to an AI agent may be included in the conversation and sent to the model provider selected for that agent. Do not connect an account unless you trust the host operator and have reviewed that provider's data-use and retention settings.</p>
 <p>Use Google data only for the user-requested feature. Do not use it for advertising, resale, or training general-purpose AI models. Cloud processing must meet Google's Limited Use requirements; a provider's availability in TaroBird does not establish that it is eligible to receive Google data.</p>
+<p>The planned public integration will support local inference or reviewed cloud API configurations only. Its processing restrictions and Google data-access review are not yet complete. Existing self-configured tools must not be treated as an approved public connection or as proof that every selectable model can process Google data.</p>
 <h2>Google website sign-in and app authorization</h2>
 <p>Google website sign-in establishes a session in the browser where you sign in. It does not authorize Gmail or Calendar APIs. Google OAuth authorization must take place in a supported external browser, such as your normal Chrome or Safari, not in an application-controlled embedded browser.</p>
 <p>Continue using a Google website in that external browser. Its cookies and signed-in session are not copied into TaroBird. For an app authorization flow, follow the setup tool's instructions and its callback; Google Docs host authorization must be completed on the computer running that host.</p>
@@ -31,6 +32,7 @@
 <p><strong>Gmail、日历：</strong>通过单独配置的工具（例如 gws）按你的要求查找和读取邮件、起草或发送邮件、管理邮件和标签，以及查询、创建、修改或删除日程。<strong>Google 文档：</strong>主机配置 Google Docs 授权后，可以把回答导出为文档或更新已导出的文档。三者的授权互相独立。</p>
 <p>Google 授权页面的应用名称由所用项目决定，早期开发配置可能显示 <code>gws-client</code>。公开 OAuth 验证尚未完成，本页面不表示 Google 已批准本应用。</p>
 <p>连接前请阅读<a href="privacy.html#google-zh">Google 数据隐私说明</a>，核对 Google 显示的账号和权限。工具读回的邮件或日程可能进入对话，并发送给该 Bot 使用的模型服务商。请先确认主机运营者、模型服务商及其数据使用和保留设置。Google 数据只能用于用户请求的功能，不得用于广告、转售或通用 AI 模型训练；服务商出现在 TaroBird 的可选列表中，并不意味着它已符合 Google 数据处理要求。</p>
+<p>计划中的公开集成仅支持本地推理或经核验的云端 API 配置，相关限制措施和 Google 数据权限审核尚未完成。当前自行配置的工具不等于已获审核的公开连接，也不表示所有可选模型都能处理 Google 数据。</p>
 <h3>内置浏览器与 Google 登录</h3>
 <p>登录 Google 网页和授权 Gmail／日历 API 是两件事。Google OAuth 授权需要使用支持的外部浏览器，例如你常用的 Chrome 或 Safari。Google 网页请在该浏览器里继续使用，登录状态和 Cookie 不会复制回 TaroBird。应用授权则按配置工具的提示和回调完成；主机的 Google Docs 授权须在运行该主机的电脑上完成。</p>
 <h3>断开与删除</h3>
