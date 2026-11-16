@@ -83,7 +83,11 @@ document.documentElement.lang=/^zh/i.test(l)?'zh-CN':'en';})();
     <p class="eyebrow"><span class="zh">功能</span><span class="en">Features</span></p>
     <h2><span class="zh">多个 Bot，一个对话，进度一目了然</span><span class="en">Several Bots, one conversation, every step visible</span></h2>
     <p class="sub"><span class="zh">手机、平板和电脑共用同一套 Bot 与对话。群聊里让不同的智能体分工协作；任务完成或需要你确认时，手机会收到通知。</span><span class="en">Your phone, tablet and computers share the same Bots and conversations. Let different agents split the work in a group chat, and get a notification when a task finishes or needs your confirmation.</span></p>
-    <div class="gallery" id="gallery"></div>
+    <div class="carousel">
+      <button class="car-btn prev" type="button" aria-label="Previous"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="gallery" id="gallery"></div>
+      <button class="car-btn next" type="button" aria-label="Next"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
     <div class="engines">
       <span class="chip">Codex</span><span class="chip">Claude Code</span><span class="chip">Kimi Code</span><span class="chip">DeepSeek Harness</span><span class="chip">Antigravity</span>
     </div>
@@ -165,10 +169,18 @@ document.documentElement.lang=/^zh/i.test(l)?'zh-CN':'en';})();
 <script>
 (function(){
   var d=document.documentElement;
-  document.getElementById('lang').onclick=function(){var n=/^zh/.test(d.lang)?'en':'zh-CN';d.lang=n;try{localStorage.setItem('tb-lang',n)}catch(e){};gallery()};
+  document.getElementById('lang').onclick=function(){var n=/^zh/.test(d.lang)?'en':'zh-CN';d.lang=n;try{localStorage.setItem('tb-lang',n)}catch(e){};gallery();document.getElementById('gallery').scrollLeft=0};
   function gallery(){var loc=/^zh/.test(d.lang)?'zh-Hans':'en-US',g=document.getElementById('gallery');
     g.innerHTML=['02','03','04','05','06','08'].map(function(n){return '<img loading="lazy" width="250" src="assets/shots/'+loc+'-'+n+'.webp" alt="">'}).join('')}
   gallery();
+  // Carousel arrows: one click moves about one screenful of cards.
+  var g=document.getElementById('gallery'),pv=document.querySelector('.car-btn.prev'),nx=document.querySelector('.car-btn.next');
+  function upd(){pv.disabled=g.scrollLeft<8;nx.disabled=g.scrollLeft+g.clientWidth>=g.scrollWidth-8}
+  function go(dir){var card=g.querySelector('img'),step=card?card.getBoundingClientRect().width+18:268;
+    g.scrollBy({left:dir*Math.max(step,Math.floor(g.clientWidth/step)*step),behavior:'smooth'})}
+  pv.onclick=function(){go(-1)};nx.onclick=function(){go(1)};
+  g.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd);
+  g.addEventListener('load',upd,true);upd();
   // Recommend the card for this visitor's platform.
   var ua=navigator.userAgent||'',os=/Android/i.test(ua)?'android':/iPhone|iPad|iPod/i.test(ua)||(/Macintosh/.test(ua)&&navigator.maxTouchPoints>1)?'ios':/Mac/i.test(ua)?'mac':/Win/i.test(ua)?'win':'';
   var rec=os&&document.querySelector('.dl[data-os="'+os+'"]'); if(rec) rec.classList.add('rec');

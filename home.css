@@ -45,7 +45,13 @@ h2{font-size:42px;line-height:1.2;margin:0 0 16px;letter-spacing:-.01em}
 .step h3{font-size:22px;margin:8px 0 8px}
 .step p{margin:0;color:var(--muted);font-size:16px}
 
-.gallery{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:44px 24px 10px;margin:0 -24px;scrollbar-width:thin}
+.carousel{position:relative;margin-top:44px}
+.gallery{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:10px 2px 24px;scrollbar-width:none;-ms-overflow-style:none}
+.gallery::-webkit-scrollbar{display:none}
+.car-btn{position:absolute;top:calc(50% - 7px);transform:translateY(-50%);z-index:2;width:52px;height:52px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.95);color:var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 8px 24px rgba(60,35,15,.16);transition:opacity .2s,transform .2s,background .2s}
+.car-btn:hover{background:#fff;transform:translateY(-50%) scale(1.06)}
+.car-btn.prev{left:-22px}.car-btn.next{right:-22px}
+.car-btn[disabled]{opacity:0;pointer-events:none}
 .gallery img{width:250px;flex:0 0 auto;border-radius:20px;scroll-snap-align:start;box-shadow:0 10px 30px rgba(60,35,15,.12)}
 
 .engines{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
@@ -87,4 +93,5 @@ footer a{color:var(--muted)}
   h2{font-size:32px}
   section{padding:64px 0}
   .nav .links a.hide-sm{display:none}
+  .car-btn{width:42px;height:42px}.car-btn.prev{left:-6px}.car-btn.next{right:-6px}
 }
