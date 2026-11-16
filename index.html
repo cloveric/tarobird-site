@@ -1,16 +1,188 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TaroBird</title><link rel="stylesheet" href="style.css"></head>
-<body><main>
-<h1>TaroBird</h1>
-<p class="muted">A workspace for the AI agents you run on your own computers.</p>
-<p>TaroBird lets your phone and computers share the same Bots and conversations. Command-line agents run on a host that you install and control; the TaroBird apps are clients for that host.</p>
-<p>Optional Google connections let your configured tools work with mail, calendars and documents at your request. Google connections require separate setup and permission; browsing a Google website does not grant API access.</p>
-<ul>
-<li><a href="google.html">Google connections / Google 连接说明</a></li>
-<li><a href="privacy.html">Privacy Policy / 隐私政策</a></li>
-<li><a href="terms.html">Terms / 使用条款</a></li>
-<li><a href="support.html">Support / 技术支持</a></li>
-<li><a href="https://github.com/cloveric/tarobird">Source code and desktop downloads (GitHub)</a></li>
-</ul>
-</main></body></html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TaroBird — 电脑干活，手机指挥 · Your computer works. Your phone directs.</title>
+<meta name="description" content="TaroBird: a self-hosted workspace for the AI agents on your own computer. Send tasks from your phone, follow each step, get the results. Desktop for macOS and Windows, apps for iPhone, iPad and Android.">
+<meta property="og:title" content="TaroBird — Your computer works. Your phone directs.">
+<meta property="og:description" content="A self-hosted workspace for the AI agents on your own computer.">
+<meta property="og:image" content="https://cloveric.github.io/tarobird-site/assets/hero.webp">
+<link rel="icon" href="assets/icon.png">
+<link rel="apple-touch-icon" href="assets/icon.png">
+<link rel="stylesheet" href="home.css">
+<script>
+(function(){var s=null;try{s=localStorage.getItem('tb-lang')}catch(e){}
+var l=s||((navigator.languages&&navigator.languages[0])||navigator.language||'en');
+document.documentElement.lang=/^zh/i.test(l)?'zh-CN':'en';})();
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#"><img src="assets/icon.png" alt="">TaroBird</a>
+    <nav class="links">
+      <a class="hide-sm" href="#how"><span class="zh">怎么用</span><span class="en">How it works</span></a>
+      <a class="hide-sm" href="#features"><span class="zh">功能</span><span class="en">Features</span></a>
+      <a href="#download"><span class="zh">下载</span><span class="en">Download</span></a>
+      <a class="hide-sm" href="https://github.com/cloveric/tarobird">GitHub</a>
+    </nav>
+    <button class="lang-btn" id="lang" type="button"><span class="zh">EN</span><span class="en">中文</span></button>
+  </div>
+</header>
+
+<section class="hero" style="padding:0">
+  <div class="wrap">
+    <div class="hero-text">
+      <h1><span class="zh">电脑干活，<br><em>手机指挥。</em></span><span class="en">Your computer works.<br><em>Your phone directs.</em></span></h1>
+      <p class="lede"><span class="zh">AI 智能体在你自己的电脑上干活。在手机上派任务、看每一步进度、随时收结果。</span><span class="en">AI agents work on your own computer. Send a task from your phone, watch each step, and get the result wherever you are.</span></p>
+      <div class="cta">
+        <a class="btn" href="#download"><span class="zh">下载桌面端</span><span class="en">Get the desktop app</span></a>
+        <a class="badge" href="https://apps.apple.com/app/tarobird/id6828071641"><img src="assets/appstore-badge.svg" alt="Download on the App Store"></a>
+      </div>
+      <p class="note"><span class="zh">手机端需配合电脑上的 TaroBird 桌面端使用。</span><span class="en">The phone app works together with the TaroBird desktop app on your computer.</span></p>
+    </div>
+  </div>
+  <img class="hero-scene" src="assets/hero-scene.webp" alt="">
+</section>
+
+<section id="video" class="video-sec">
+  <div class="wrap">
+    <p class="eyebrow"><span class="zh">一分钟看懂</span><span class="en">See it in a minute</span></p>
+    <h2><span class="zh">你的智能体，一个对话就能找到</span><span class="en">Your agents. One conversation away.</span></h2>
+    <div class="video">
+      <video controls playsinline preload="none" poster="assets/promo-poster.webp">
+        <source src="assets/tarobird-promo.mp4" type="video/mp4">
+      </video>
+    </div>
+    <p class="small"><span class="zh">画面文字为英文，只有配乐。也可以 <a href="https://www.youtube.com/watch?v=R0WvfGiIFiw">在 YouTube 观看</a>。</span><span class="en">Also on <a href="https://www.youtube.com/watch?v=R0WvfGiIFiw">YouTube</a>.</span></p>
+  </div>
+</section>
+
+<section id="how" style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow"><span class="zh">三步开始</span><span class="en">Get started</span></p>
+    <h2><span class="zh">装好电脑端，手机扫一扫就能用</span><span class="en">Install on your computer, scan once with your phone</span></h2>
+    <div class="steps">
+      <div class="step"><div class="n">01</div>
+        <h3><span class="zh">安装桌面端</span><span class="en">Install the desktop app</span></h3>
+        <p><span class="zh">在 Mac 或 Windows 上安装 TaroBird，设为主机，新建 Bot 并选择电脑上已装好的 AI 引擎。</span><span class="en">Install TaroBird on your Mac or Windows PC, make it your host, and create a Bot with an AI engine already installed on that computer.</span></p></div>
+      <div class="step"><div class="n">02</div>
+        <h3><span class="zh">手机扫码配对</span><span class="en">Pair your phone</span></h3>
+        <p><span class="zh">在电脑上打开「添加设备」显示二维码，手机扫一下，再在电脑上确认 8 位配对码。</span><span class="en">Open Add device on the computer to show a QR code, scan it with your phone, then confirm the 8-digit code on the computer.</span></p></div>
+      <div class="step"><div class="n">03</div>
+        <h3><span class="zh">随时随地派任务</span><span class="en">Work from anywhere</span></h3>
+        <p><span class="zh">同一 Wi-Fi 直接连；外出时通过 Tailscale 或你自己部署的中转服务器连回电脑。</span><span class="en">Connect directly on the same Wi-Fi; when you are out, reach your computer through Tailscale or a relay server you run yourself.</span></p></div>
+    </div>
+  </div>
+</section>
+
+<section id="features" style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow"><span class="zh">功能</span><span class="en">Features</span></p>
+    <h2><span class="zh">多个 Bot，一个对话，进度一目了然</span><span class="en">Several Bots, one conversation, every step visible</span></h2>
+    <p class="sub"><span class="zh">手机、平板和电脑共用同一套 Bot 与对话。群聊里让不同的智能体分工协作；任务完成或需要你确认时，手机会收到通知。</span><span class="en">Your phone, tablet and computers share the same Bots and conversations. Let different agents split the work in a group chat, and get a notification when a task finishes or needs your confirmation.</span></p>
+    <div class="gallery" id="gallery"></div>
+    <div class="engines">
+      <span class="chip">Codex</span><span class="chip">Claude Code</span><span class="chip">Kimi Code</span><span class="chip">DeepSeek Harness</span><span class="chip">Antigravity</span>
+    </div>
+    <p class="small"><span class="zh">TaroBird 直接调用各家官方命令行工具，不重新实现智能体。在运行 Bot 的电脑上安装并登录任意一种即可；TaroBird 不附带 AI 引擎、模型账号或额度。</span><span class="en">TaroBird runs each vendor's official command-line agent instead of re-implementing it. Install and sign in to any of them on the computer that runs your Bots; TaroBird does not include AI engines, model accounts or credits.</span></p>
+  </div>
+</section>
+
+<section id="download" class="band">
+  <div class="wrap">
+    <p class="eyebrow"><span class="zh">下载</span><span class="en">Download</span></p>
+    <h2><span class="zh">各平台下载</span><span class="en">Downloads for every platform</span></h2>
+    <p class="sub" id="rel-line"><span class="zh">安装包来自 GitHub Releases 的最新版本。</span><span class="en">Installers come from the latest GitHub release.</span></p>
+    <div class="downloads">
+      <div class="dl" data-os="mac"><span class="rec-tag"><span class="zh">推荐</span><span class="en">For you</span></span>
+        <h3>macOS</h3>
+        <p class="meta"><span class="zh">Apple 芯片（M 系列）· macOS 13 及以上 · 已通过 Apple 公证</span><span class="en">Apple silicon (M-series) · macOS 13 or later · notarized by Apple</span></p>
+        <a class="go" id="dl-mac" href="https://github.com/cloveric/tarobird/releases/download/v1.5.0/TaroBird_1.5.0_aarch64.dmg"><span class="zh">下载 .dmg</span><span class="en">Download .dmg</span></a>
+        <span class="meta size" id="sz-mac"></span>
+      </div>
+      <div class="dl" data-os="win"><span class="rec-tag"><span class="zh">推荐</span><span class="en">For you</span></span>
+        <h3>Windows</h3>
+        <p class="meta"><span class="zh">64 位安装程序。安装包暂未代码签名，若出现 SmartScreen 提示，请点「更多信息 → 仍要运行」。</span><span class="en">64-bit installer. Not code-signed yet: if SmartScreen appears, choose More info → Run anyway.</span></p>
+        <a class="go" id="dl-win" href="https://github.com/cloveric/tarobird/releases/download/v1.5.0/TaroBird_1.5.0_x64-setup.exe"><span class="zh">下载 .exe</span><span class="en">Download .exe</span></a>
+        <span class="meta size" id="sz-win"></span>
+      </div>
+      <div class="dl" data-os="ios"><span class="rec-tag"><span class="zh">推荐</span><span class="en">For you</span></span>
+        <h3>iPhone &amp; iPad</h3>
+        <p class="meta"><span class="zh">App Store 下载。中国大陆 App Store 暂未上架。</span><span class="en">Available on the App Store (not in mainland China).</span></p>
+        <a class="badge" href="https://apps.apple.com/app/tarobird/id6828071641"><img src="assets/appstore-badge.svg" alt="Download on the App Store"></a>
+        <span class="alt"><span class="zh">也可以加入 <a href="https://testflight.apple.com/join/ByFWEfFW">TestFlight 公测</a>。</span><span class="en">Or join the <a href="https://testflight.apple.com/join/ByFWEfFW">TestFlight beta</a>.</span></span>
+      </div>
+      <div class="dl" data-os="android"><span class="rec-tag"><span class="zh">推荐</span><span class="en">For you</span></span>
+        <h3>Android</h3>
+        <p class="meta"><span class="zh">APK 安装包，手机端，需配合电脑上的桌面端使用。</span><span class="en">APK for phones; works together with the desktop app on your computer.</span></p>
+        <a class="go" id="dl-apk" href="https://github.com/cloveric/tarobird/releases/download/v1.5.0/TaroBird_1.5.0_android.apk"><span class="zh">下载 .apk</span><span class="en">Download .apk</span></a>
+        <span class="meta size" id="sz-apk"></span>
+      </div>
+      <div class="dl" data-os="server">
+        <h3><span class="zh">服务器 / 无界面主机</span><span class="en">Server / headless host</span></h3>
+        <p class="meta"><span class="zh">不开桌面窗口，在电脑或服务器上作为主机运行（需要 Node 22.12+）。</span><span class="en">Run the host without a desktop window on a computer or server (Node 22.12+).</span></p>
+        <a class="go" id="dl-cli" href="https://github.com/cloveric/tarobird/releases/download/v1.5.0/tarobird-1.5.0.tgz"><span class="zh">下载 CLI 包</span><span class="en">Download CLI package</span></a>
+        <span class="alt"><a href="https://github.com/cloveric/tarobird/blob/main/docs/host-cli.md"><span class="zh">安装说明</span><span class="en">Install guide</span></a></span>
+      </div>
+      <div class="dl">
+        <h3><span class="zh">所有版本与校验</span><span class="en">All releases &amp; checksums</span></h3>
+        <p class="meta"><span class="zh">历史版本、发布说明和 SHA256 校验值都在 GitHub。</span><span class="en">Older versions, release notes and SHA256 checksums are on GitHub.</span></p>
+        <a class="go" href="https://github.com/cloveric/tarobird/releases"><span class="zh">打开 GitHub Releases</span><span class="en">Open GitHub Releases</span></a>
+      </div>
+    </div>
+    <div class="req"><b><span class="zh">提示：</span><span class="en">Note:</span></b> <span class="zh">手机端（iPhone、iPad、Android）不能单独使用，请先在电脑上安装 TaroBird 桌面端，再用手机扫码配对。</span><span class="en">The phone and tablet apps do not work on their own. Install the TaroBird desktop app on your computer first, then scan its QR code with your phone to pair.</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow"><span class="zh">你的数据</span><span class="en">Your data</span></p>
+    <h2><span class="zh">数据留在你自己手里</span><span class="en">Your data stays with you</span></h2>
+    <div class="pillars">
+      <div class="pillar"><h3><span class="zh">没有账号</span><span class="en">No accounts</span></h3><p><span class="zh">不用注册，设备直接和你的主机配对。没有广告，没有统计分析。</span><span class="en">No sign-up: devices pair with your host directly. No ads, no analytics.</span></p></div>
+      <div class="pillar"><h3><span class="zh">存在你的主机上</span><span class="en">Stored on your host</span></h3><p><span class="zh">对话和文件只保存在你的主机和已配对的设备上，连接加密并绑定主机身份。</span><span class="en">Conversations and files live only on your host and paired devices; connections are encrypted and pinned to your host's identity.</span></p></div>
+      <div class="pillar"><h3><span class="zh">开源</span><span class="en">Open source</span></h3><p><span class="zh">源代码在 GitHub 公开，采用 AGPL-3.0 许可证。</span><span class="en">The source code is public on GitHub under the AGPL-3.0 license.</span></p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="about"><span class="en">TaroBird lets your phone and computers share the same Bots and conversations. Command-line agents run on a host that you install and control; the TaroBird apps are clients for that host. Optional Google connections let your configured tools work with mail, calendars and documents at your request. Google connections require separate setup and permission; browsing a Google website does not grant API access.</span><span class="zh">TaroBird 让你的手机和电脑共用同一套 Bot 与对话。命令行智能体运行在你自己安装和控制的主机上，TaroBird 各端 App 都是这台主机的客户端。可选的 Google 连接可以让你配置的工具在你要求时处理邮件、日历和文档；Google 连接需要单独设置和授权，浏览 Google 网站本身不会授予 API 访问权限。</span></p>
+    <div class="flinks">
+      <a href="google.html"><span class="zh">Google 连接说明</span><span class="en">Google connections</span></a>
+      <a href="privacy.html"><span class="zh">隐私政策</span><span class="en">Privacy Policy</span></a>
+      <a href="terms.html"><span class="zh">使用条款</span><span class="en">Terms</span></a>
+      <a href="support.html"><span class="zh">技术支持</span><span class="en">Support</span></a>
+      <a href="https://github.com/cloveric/tarobird">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var d=document.documentElement;
+  document.getElementById('lang').onclick=function(){var n=/^zh/.test(d.lang)?'en':'zh-CN';d.lang=n;try{localStorage.setItem('tb-lang',n)}catch(e){};gallery()};
+  function gallery(){var loc=/^zh/.test(d.lang)?'zh-Hans':'en-US',g=document.getElementById('gallery');
+    g.innerHTML=['02','03','04','05','06','08'].map(function(n){return '<img loading="lazy" width="250" src="assets/shots/'+loc+'-'+n+'.webp" alt="">'}).join('')}
+  gallery();
+  // Recommend the card for this visitor's platform.
+  var ua=navigator.userAgent||'',os=/Android/i.test(ua)?'android':/iPhone|iPad|iPod/i.test(ua)||(/Macintosh/.test(ua)&&navigator.maxTouchPoints>1)?'ios':/Mac/i.test(ua)?'mac':/Win/i.test(ua)?'win':'';
+  var rec=os&&document.querySelector('.dl[data-os="'+os+'"]'); if(rec) rec.classList.add('rec');
+  // Point the buttons at the newest release (static 1.5.0 links stay if this fails).
+  function mb(b){return (b/1048576).toFixed(0)+' MB'}
+  fetch('https://api.github.com/repos/cloveric/tarobird/releases/latest').then(function(r){return r.ok?r.json():null}).then(function(rel){
+    if(!rel||!rel.assets) return; var v=(rel.tag_name||'').replace(/^v/,'');
+    var map={mac:/_aarch64\.dmg$/,win:/_x64-setup\.exe$/,apk:/_android\.apk$/,cli:/^tarobird-[\d.]+\.tgz$/};
+    Object.keys(map).forEach(function(k){var a=rel.assets.filter(function(x){return map[k].test(x.name)})[0];if(!a)return;
+      var el=document.getElementById('dl-'+k);if(el)el.href=a.browser_download_url;var s=document.getElementById('sz-'+k);if(s)s.textContent='v'+v+' · '+mb(a.size)});
+    var line=document.getElementById('rel-line');
+    if(line&&v) line.innerHTML='<span class="zh">当前最新版本：v'+v+'（来自 GitHub Releases）</span><span class="en">Latest version: v'+v+' (from GitHub Releases)</span>';
+  }).catch(function(){});
+})();
+</script>
+</body>
+</html>
