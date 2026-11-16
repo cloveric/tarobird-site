@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="home.css">
 <script>
 (function(){var s=null;try{s=localStorage.getItem('tb-lang')}catch(e){}
-var l=s||((navigator.languages&&navigator.languages[0])||navigator.language||'en');
+var l=s||'en';  // English by default; the toggle remembers the visitor's choice
 document.documentElement.lang=/^zh/i.test(l)?'zh-CN':'en';})();
 </script>
 </head>
