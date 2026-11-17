@@ -4,7 +4,7 @@
 <body><main>
 <nav><a href="index.html">TaroBird</a><a href="support.html">Support</a></nav>
 <h1>TaroBird Privacy Policy</h1>
-<p class="muted">Effective date: November 14, 2026</p>
+<p class="muted">Effective date: November 17, 2026</p>
 <p class="lang"><a href="#zh">中文版</a></p>
 
 <p>TaroBird is a set of apps (iOS, Android, macOS, Windows and a command-line host) for using AI agents that run on computers you control. This policy explains what happens to your information when you use the TaroBird apps.</p>
@@ -17,7 +17,7 @@
 </ul>
 
 <h2>Information stored on your devices and your host</h2>
-<p>When you pair a device, it creates a device key that stays on the device (in the iOS Keychain where available). Your host keeps the list of paired devices, your Bots, conversations, messages and attachments in its own database on your computer or server. You can remove a device from the host at any time and delete conversations in the app.</p>
+<p>When you pair a device, it creates a device key that stays on the device (in the iOS Keychain or the Android Keystore where available). Your host keeps the list of paired devices, your Bots, conversations, messages and attachments in its own database on your computer or server. You can remove a device from the host at any time and delete conversations in the app.</p>
 
 <h2>Network connections</h2>
 <p>For host communication, the apps connect to the addresses in the connection details you scan or paste: for example a computer on your local network, a computer on your Tailscale network, or a relay server that you run. These connections use encryption pinned to your host's identity. Optional tools connect to services selected by the host operator. The embedded browser connects to websites you open, and update checks or downloads connect to the configured distribution service.</p>
@@ -47,10 +47,12 @@
 <li><strong>Local network</strong>: to reach a host on your local network.</li>
 <li><strong>Face ID</strong>: to unlock the app if you turn on app lock.</li>
 </ul>
+<p>The Android app likewise asks only when you use the feature: <strong>Camera</strong> (scan connection QR codes, take photos to attach), <strong>Microphone</strong> (record voice messages), <strong>Notifications</strong> (show replies and task results) and the system <strong>fingerprint, face unlock or screen lock</strong> prompt (unlock the app if you turn on app lock). Images and files you attach are chosen with the system picker. Biometric data stays with the operating system and is never available to TaroBird.</p>
 <p>Photos, recordings and files you attach are sent only to your host.</p>
 
 <h2>Notifications</h2>
 <p>If you allow notifications, the app registers with Apple Push Notification service (APNs) and gives the resulting device token to your host. Your host then sends notifications through APNs using credentials configured on that host. Apple handles the delivery under its own privacy policy.</p>
+<p>On Android, the app registers for notifications only after you turn them on. It then obtains a registration token from Firebase Cloud Messaging (FCM), a Google service, or from the UnifiedPush distributor you choose, and gives that token to your host. Your host sends notifications through that service using credentials configured on the host; Google handles FCM delivery under its own privacy policy. Turning notifications off deletes the token. On every platform you can hide message previews in the notification settings, so notifications only carry generic text.</p>
 
 <h2>Children</h2>
 <p>TaroBird is not directed to children under 13 and the developer does not knowingly collect information from children.</p>
@@ -62,7 +64,7 @@
 <p>Questions about this policy: open an issue at <a href="https://github.com/cloveric/tarobird/issues">github.com/cloveric/tarobird/issues</a>.</p>
 
 <h2 id="zh">TaroBird 隐私政策（中文版）</h2>
-<p class="muted">生效日期：2026 年 11 月 14 日</p>
+<p class="muted">生效日期：2026 年 11 月 17 日</p>
 <p>TaroBird 是一组应用（iOS、Android、macOS、Windows 以及命令行主机），用来使用运行在你自己电脑上的 AI 智能体。本政策说明你使用 TaroBird 时信息如何处理。</p>
 <h3>概要</h3>
 <ul>
@@ -89,9 +91,10 @@
 <p>打开的网站会接收正常网页请求，并按各自政策处理信息。Cookie、网站存储、缓存及已启用的历史记录保存在本地浏览器配置中。个人浏览器与对话浏览器的配置互相独立，可通过浏览器工具清理历史或网站数据。</p>
 <p>授权 Bot 操作对话浏览器后，它读取的网页文字、截图或文件可能进入上下文并发送给所配置的模型。Google 网页登录与 API 授权互相独立；Google 授权请使用受支持的外部浏览器，其 Cookie 不会导入 TaroBird。退出网页登录不会撤销独立的 API 连接。</p>
 <h3>设备权限</h3>
-<p>iOS 应用只在你使用相应功能时申请权限：相机（扫描连接二维码、拍照作为附件）、照片（选择图片作为附件、按你的要求保存连接二维码）、麦克风（录制发给 Bot 的语音消息）、本地网络（连接局域网里的主机）、面容 ID（开启应用锁后解锁）。你添加的照片、录音和文件只发送到你的主机。</p>
+<p>iOS 应用只在你使用相应功能时申请权限：相机（扫描连接二维码、拍照作为附件）、照片（选择图片作为附件、按你的要求保存连接二维码）、麦克风（录制发给 Bot 的语音消息）、本地网络（连接局域网里的主机）、面容 ID（开启应用锁后解锁）。安卓应用同样只在你使用相应功能时申请：相机（扫描连接二维码、拍照作为附件）、麦克风（录制语音消息）、通知（显示回复和任务结果），以及系统的指纹、人脸解锁或锁屏密码验证（开启应用锁后解锁）。附件里的图片和文件通过系统选择器挑选。生物识别信息只保存在系统中，TaroBird 无法获取。你添加的照片、录音和文件只发送到你的主机。</p>
 <h3>通知</h3>
 <p>如果你允许通知，应用会向 Apple 推送通知服务（APNs）注册，并把得到的设备令牌交给你的主机。主机使用其上配置的凭据通过 APNs 发送通知，投递过程适用 Apple 的隐私政策。</p>
+<p>在安卓上，只有你打开通知后应用才会注册：它向 Google 的 Firebase 云消息服务（FCM）或你选择的 UnifiedPush 分发器申请注册令牌，并交给你的主机。主机使用其上配置的凭据通过该服务发送通知，FCM 的投递适用 Google 的隐私政策。关闭通知会删除该令牌。在所有平台上，你都可以在通知设置里隐藏消息预览，通知只显示通用文字。</p>
 <h3>儿童</h3>
 <p>TaroBird 不面向 13 岁以下儿童，开发者也不会有意收集儿童信息。</p>
 <h3>变更</h3>
