@@ -104,31 +104,31 @@ document.documentElement.lang=/^zh/i.test(l)?'zh-CN':'en';})();
       <div class="dl" data-os="mac"><span class="rec-tag"><span class="zh">推荐</span><span class="en">For you</span></span>
         <h3>macOS</h3>
         <p class="meta"><span class="zh">Apple 芯片（M 系列）· macOS 13 及以上 · 已通过 Apple 公证</span><span class="en">Apple silicon (M-series) · macOS 13 or later · notarized by Apple</span></p>
-        <a class="go" id="dl-mac" href="https://github.com/cloveric/tarobird/releases/download/v1.5.0/TaroBird_1.5.0_aarch64.dmg"><span class="zh">下载 .dmg</span><span class="en">Download .dmg</span></a>
+        <a class="go" id="dl-mac" href="https://github.com/cloveric/tarobird/releases/download/v1.5.1/TaroBird_1.5.1_aarch64.dmg"><span class="zh">下载 .dmg</span><span class="en">Download .dmg</span></a>
         <span class="meta size" id="sz-mac"></span>
       </div>
       <div class="dl" data-os="win"><span class="rec-tag"><span class="zh">推荐</span><span class="en">For you</span></span>
         <h3>Windows</h3>
         <p class="meta"><span class="zh">64 位安装程序。安装包暂未代码签名，若出现 SmartScreen 提示，请点「更多信息 → 仍要运行」。</span><span class="en">64-bit installer. Not code-signed yet: if SmartScreen appears, choose More info → Run anyway.</span></p>
-        <a class="go" id="dl-win" href="https://github.com/cloveric/tarobird/releases/download/v1.5.0/TaroBird_1.5.0_x64-setup.exe"><span class="zh">下载 .exe</span><span class="en">Download .exe</span></a>
+        <a class="go" id="dl-win" href="https://github.com/cloveric/tarobird/releases/download/v1.5.1/TaroBird_1.5.1_x64-setup.exe"><span class="zh">下载 .exe</span><span class="en">Download .exe</span></a>
         <span class="meta size" id="sz-win"></span>
       </div>
       <div class="dl" data-os="ios"><span class="rec-tag"><span class="zh">推荐</span><span class="en">For you</span></span>
         <h3>iPhone &amp; iPad</h3>
         <p class="meta"><span class="zh">App Store 下载。中国大陆 App Store 暂未上架。</span><span class="en">Available on the App Store (not in mainland China).</span></p>
         <a class="badge" href="https://apps.apple.com/app/tarobird/id6828071641"><img src="assets/appstore-badge.svg" alt="Download on the App Store"></a>
-        <span class="alt"><span class="zh">也可以加入 <a href="https://testflight.apple.com/join/ByFWEfFW">TestFlight 公测</a>。</span><span class="en">Or join the <a href="https://testflight.apple.com/join/ByFWEfFW">TestFlight beta</a>.</span></span>
+        <span class="alt"><span class="zh">iOS 更新以 App Store 审核与发布进度为准。</span><span class="en">iOS updates follow App Store review and rollout.</span></span>
       </div>
       <div class="dl" data-os="android"><span class="rec-tag"><span class="zh">推荐</span><span class="en">For you</span></span>
         <h3>Android</h3>
         <p class="meta"><span class="zh">APK 安装包，手机端，需配合电脑上的桌面端使用。</span><span class="en">APK for phones; works together with the desktop app on your computer.</span></p>
-        <a class="go" id="dl-apk" href="https://github.com/cloveric/tarobird/releases/download/v1.5.0/TaroBird_1.5.0_android.apk"><span class="zh">下载 .apk</span><span class="en">Download .apk</span></a>
+        <a class="go" id="dl-apk" href="https://github.com/cloveric/tarobird/releases/download/v1.5.1/TaroBird_1.5.1_android.apk"><span class="zh">下载 .apk</span><span class="en">Download .apk</span></a>
         <span class="meta size" id="sz-apk"></span>
       </div>
       <div class="dl" data-os="server">
         <h3><span class="zh">服务器 / 无界面主机</span><span class="en">Server / headless host</span></h3>
         <p class="meta"><span class="zh">不开桌面窗口，在电脑或服务器上作为主机运行（需要 Node 22.12+）。</span><span class="en">Run the host without a desktop window on a computer or server (Node 22.12+).</span></p>
-        <a class="go" id="dl-cli" href="https://github.com/cloveric/tarobird/releases/download/v1.5.0/tarobird-1.5.0.tgz"><span class="zh">下载 CLI 包</span><span class="en">Download CLI package</span></a>
+        <a class="go" id="dl-cli" href="https://github.com/cloveric/tarobird/releases/download/v1.5.1/tarobird-1.5.1.tgz"><span class="zh">下载 CLI 包</span><span class="en">Download CLI package</span></a>
         <span class="alt"><a href="https://github.com/cloveric/tarobird/blob/main/docs/host-cli.md"><span class="zh">安装说明</span><span class="en">Install guide</span></a></span>
       </div>
       <div class="dl">
@@ -184,7 +184,7 @@ document.documentElement.lang=/^zh/i.test(l)?'zh-CN':'en';})();
   // Recommend the card for this visitor's platform.
   var ua=navigator.userAgent||'',os=/Android/i.test(ua)?'android':/iPhone|iPad|iPod/i.test(ua)||(/Macintosh/.test(ua)&&navigator.maxTouchPoints>1)?'ios':/Mac/i.test(ua)?'mac':/Win/i.test(ua)?'win':'';
   var rec=os&&document.querySelector('.dl[data-os="'+os+'"]'); if(rec) rec.classList.add('rec');
-  // Point the buttons at the newest release (static 1.5.0 links stay if this fails).
+  // Point the buttons at the newest release (static 1.5.1 links stay if this fails).
   function mb(b){return (b/1048576).toFixed(0)+' MB'}
   fetch('https://api.github.com/repos/cloveric/tarobird/releases/latest').then(function(r){return r.ok?r.json():null}).then(function(rel){
     if(!rel||!rel.assets) return; var v=(rel.tag_name||'').replace(/^v/,'');
